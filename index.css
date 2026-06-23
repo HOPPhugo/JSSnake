@@ -1,0 +1,32 @@
+html {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px;
+}
+p {
+    color: green;
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    min-width: 50px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-height: 500px;
+}
+#XT, #Type, #FPSTexte {
+    margin-left: 100px;
+}
+#Type, #FPSTexte {
+    width: fit-content;
+}
