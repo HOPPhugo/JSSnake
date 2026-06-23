@@ -1,3 +1,3 @@
 # JSSnake
 
-Link : https://hopphugo.github.io/JSSnake/
+the link : https://hopphugo.github.io/JSSnake/
