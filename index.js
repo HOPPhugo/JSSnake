@@ -15,6 +15,11 @@ let hue = 0;
 let SizeTexte = document.getElementById("Sizet");
 let XTexte = document.getElementById("Xt");
 let YTexte = document.getElementById("Yt");
+let UP = document.getElementById("Up");
+let DOWN = document.getElementById("Down");
+let LEFT = document.getElementById("Left");
+let RIGHT = document.getElementById("Right");
+let Upbtn = getComputedStyle(UP).backgroundColor;
 
 let hueSpeed = 3;
 const keys = {
@@ -42,11 +47,15 @@ function isDivisibleBy25(number) {
   return number % 25 === 0;
 }
 function update () {
+let Upbtn = getComputedStyle(UP).backgroundColor;
+let Downbtn = getComputedStyle(DOWN).backgroundColor;
+let Leftbtn = getComputedStyle(LEFT).backgroundColor;
+let Rightbtn = getComputedStyle(RIGHT).backgroundColor;
   hue = (hue + hueSpeed) % 360;
-  if (keys.W || keys.w) direction ="Up";
-  if (keys.S || keys.s) direction = "Down";
-  if (keys.A || keys.a) direction = "Left";
-  if (keys.D || keys.d) direction = "Right";
+  if (keys.W || keys.w || Upbtn == "rgb(255, 255, 255)") direction ="Up";
+  if (keys.S || keys.s || Downbtn == "rgb(255, 255, 255)") direction = "Down";
+  if (keys.A || keys.a || Leftbtn == "rgb(255, 255, 255)") direction = "Left";
+  if (keys.D || keys.d || Rightbtn == "rgb(255, 255, 255)") direction = "Right";
   XTexte.innerHTML = `X : ${PlayerX}`;
   YTexte.innerHTML = `Y : ${PlayerY}`;
   SizeTexte.innerHTML = `Size : ${PlayerLenght}`;
