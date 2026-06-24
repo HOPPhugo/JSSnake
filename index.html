@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overscroll-behavior: none;
+                -webkit-text-size-adjust: 100%;
+            }
+
             body {
-                touch-action: manipulation;
+                touch-action: none;
+                user-select: none;
+                -webkit-user-select: none;
             }
 
             p {
@@ -25,8 +34,7 @@
                 padding:10px;
                 border-radius: 10px;
                 margin-left: 60px;
-                font-size: 16px;
-                touch-action: manipulation;
+                touch-action: none;
                 -webkit-tap-highlight-color: transparent;
                 user-select: none;
             }
@@ -74,5 +82,28 @@
         <button id="Down" >Down</button>
         
         <script src="index.js"></script>
+        <script>
+            document.addEventListener('wheel', function (event) {
+                if (event.ctrlKey) {
+                    event.preventDefault();
+                }
+            }, { passive: false });
+
+            document.addEventListener('keydown', function (event) {
+                if ((event.ctrlKey || event.metaKey) && (event.key === '+' || event.key === '-' || event.key === '0')) {
+                    event.preventDefault();
+                }
+            });
+
+            document.addEventListener('touchmove', function (event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            }, { passive: false });
+
+            document.addEventListener('dblclick', function (event) {
+                event.preventDefault();
+            });
+        </script>
     </body>
     </html>
