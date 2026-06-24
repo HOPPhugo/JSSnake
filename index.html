@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <style>
+            body {
+                touch-action: manipulation;
+            }
+
             p {
                 width: fit-content;
             }
@@ -21,6 +25,10 @@
                 padding:10px;
                 border-radius: 10px;
                 margin-left: 60px;
+                font-size: 16px;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                user-select: none;
             }
             .middle {
                 margin-left: -50px;
