@@ -5,7 +5,7 @@ let PlayerX = 0;
 let PlayerY = 0;
 let PlayerSpeed = 25;
 let direction = "Right";
-let PlayerLenght = 1;
+let PlayerLenght = 76;
 let snakeBody = [{x: PlayerX, y: PlayerY}]; // Historique des positions
 let AppleX;
 let AppleY;
@@ -101,7 +101,11 @@ function Move(){
   if (snakeBody.length > PlayerLenght) {
     snakeBody.pop();
   }
-  
+  if (PlayerLenght >= 100) {
+    alert("Vous avez gané !!!");
+    PlayerLenght = 1;
+    snakeBody.length = 1;
+  }
   if (Apple){
     ctx.fillStyle = "yellow";
     ctx.fillRect(AppleX, AppleY, 25, 25);
