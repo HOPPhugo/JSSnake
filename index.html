@@ -11,6 +11,7 @@
                 padding: 0;
                 overscroll-behavior: none;
                 -webkit-text-size-adjust: 100%;
+                margin-left: 10%;
             }
 
             body {
@@ -57,14 +58,29 @@
             canvas {
                 width: 70%;
             }
+            @media (max-height:771px) {
+                body, html {
+                    margin-top: 50px;
+                }
+                .text1, .text2 {
+                    position: absolute;
+                    margin-left: 990px;
+                }
+                .text1 {
+                    top: 500px;
+                }
+                .text2 {
+                    top: 600px;
+                }
+            }
 
         </style>
         
-        <div class="">
+        <div class="text1">
             <p id="fps">FPS : </p>
             <p id="Sizet">Size :</p>
         </div>
-        <div class="">
+        <div class="text2">
             
             <p id="Xt">X : </p>
             <p id="Yt">Y : </p>
